@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import Bedtime from './Bedtime';
 import LoadAssets from './LoadAssets';
+import PanGestureTutorial from './ReanimatedTutorials/PanGestureTutorial';
 
 const fonts = {
 	// 'SFProDisplay-Bold': require('./assets/fonts/SFPro/SF-Pro-Display-Bold.otf'),
@@ -20,7 +21,8 @@ const fonts = {
 export default function App() {
 	return (
 		<LoadAssets fonts={fonts}>
-			<Bedtime />
+			{/* <PanGestureTutorial /> */}
+			{/* <Bedtime /> */}
 		</LoadAssets>
 	);
 }

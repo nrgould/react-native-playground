@@ -22,11 +22,15 @@ interface GestureProps {
 	startPos: Animated.SharedValue<Vector>;
 	endPos: Animated.SharedValue<Vector>;
 }
+type ContextType = {
+	offset: number;
+	region: Region;
+};
 
 const Gesture = ({ start, end, startPos, endPos }: GestureProps) => {
 	const onGestureEvent = useAnimatedGestureHandler<
 		PanGestureHandlerGestureEvent,
-		{ offest: number; region: Region }
+		ContextType
 	>({
 		onStart: ({ x, y }, ctx) => {
 			const value = { x, y };
@@ -38,14 +42,15 @@ const Gesture = ({ start, end, startPos, endPos }: GestureProps) => {
 				ctx.offset = end.value;
 			} else {
 				const { theta } = canvas2Polar(value, CENTER);
-				ctx.offest = theta;
+				ctx.offset = theta;
 				ctx.region = Region.MAIN;
 			}
 		},
 		onActive: ({ x, y }, ctx) => {
 			const value = { x, y };
 			const { theta } = canvas2Polar(value, CENTER);
-			const delta = theta - ctx.offest;
+			const delta = theta - ctx.offset;
+			console.log(delta);
 			if (ctx.region === Region.START) {
 				start.value = normalize(start.value + delta);
 			} else if (ctx.region === Region.END) {
@@ -54,7 +59,7 @@ const Gesture = ({ start, end, startPos, endPos }: GestureProps) => {
 				start.value = normalize(start.value + delta);
 				end.value = normalize(end.value + delta);
 			}
-			ctx.offest = theta;
+			ctx.offset = theta;
 		},
 	});
 	return (
