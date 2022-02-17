@@ -1,6 +1,6 @@
 import { Circle, G, Line } from 'react-native-svg';
 import React from 'react';
-import { CENTER, PADDING, R, STROKE, TAU } from '../Constants';
+import { CENTER, PADDING, R, STROKE, TAU } from '../BedTime/Constants';
 import { polar2Canvas } from 'react-native-redash';
 
 const LINES = 75;

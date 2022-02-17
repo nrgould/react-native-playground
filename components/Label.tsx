@@ -4,7 +4,7 @@ import { FontAwesome as Icon } from "@expo/vector-icons";
 import Animated, { useDerivedValue } from "react-native-reanimated";
 import { ReText } from "react-native-redash";
 
-import { formatDuration, radToMinutes } from "../Constants";
+import { formatDuration, radToMinutes } from "../BedTime/Constants";
 
 const styles = StyleSheet.create({
   container: {

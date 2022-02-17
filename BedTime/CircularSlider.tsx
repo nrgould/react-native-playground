@@ -18,7 +18,7 @@ import {
 } from './Constants';
 import Cursor from './Cursor';
 import Gesture from './Gesture';
-import Quadrant from './components/Quadrant';
+import Quadrant from '../components/Quadrant';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 

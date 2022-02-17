@@ -4,7 +4,7 @@ import { useSharedValue } from "react-native-reanimated";
 
 import CircularSlider from "./CircularSlider";
 import { PADDING } from "./Constants";
-import Container from "./components/Container";
+import Container from "../components/Container";
 
 const styles = StyleSheet.create({
   container: {

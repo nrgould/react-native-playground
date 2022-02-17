@@ -2,7 +2,10 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import Bedtime from './Bedtime';
 import LoadAssets from './LoadAssets';
+import InterpolateColors from './ReanimatedTutorials/InterpolateColors';
 import PanGestureTutorial from './ReanimatedTutorials/PanGestureTutorial';
+import PinchGestureTutorial from './ReanimatedTutorials/PinchGestureTutorial';
+import ScrollViewInterpolateTutorial from './ReanimatedTutorials/ScrollViewInterpolateTutorial';
 
 const fonts = {
 	// 'SFProDisplay-Bold': require('./assets/fonts/SFPro/SF-Pro-Display-Bold.otf'),
@@ -23,15 +26,9 @@ export default function App() {
 		<LoadAssets fonts={fonts}>
 			{/* <PanGestureTutorial /> */}
 			{/* <Bedtime /> */}
+			{/* <ScrollViewInterpolateTutorial /> */}
+			{/* <InterpolateColors /> */}
+			<PinchGestureTutorial />
 		</LoadAssets>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-});
