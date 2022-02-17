@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
+import AnimatedScrollHeader from './AnimatedScrollHeader';
 import Bedtime from './Bedtime';
 import LoadAssets from './LoadAssets';
+import DoubleTapGestureTutorial from './ReanimatedTutorials/DoubleTapGestureTutorial';
 import InterpolateColors from './ReanimatedTutorials/InterpolateColors';
 import PanGestureTutorial from './ReanimatedTutorials/PanGestureTutorial';
 import PinchGestureTutorial from './ReanimatedTutorials/PinchGestureTutorial';
@@ -28,7 +30,9 @@ export default function App() {
 			{/* <Bedtime /> */}
 			{/* <ScrollViewInterpolateTutorial /> */}
 			{/* <InterpolateColors /> */}
-			<PinchGestureTutorial />
+			{/* <PinchGestureTutorial /> */}
+			{/* <DoubleTapGestureTutorial /> */}
+			<AnimatedScrollHeader />
 		</LoadAssets>
 	);
 }
