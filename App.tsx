@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import AnimatedScrollHeader from './AnimatedScrollHeader';
+import AnimatedScrollHeader from './Pages/AnimatedScrollHeader';
 import Bedtime from './Bedtime';
 import LoadAssets from './LoadAssets';
 import DoubleTapGestureTutorial from './ReanimatedTutorials/DoubleTapGestureTutorial';
@@ -8,6 +8,8 @@ import InterpolateColors from './ReanimatedTutorials/InterpolateColors';
 import PanGestureTutorial from './ReanimatedTutorials/PanGestureTutorial';
 import PinchGestureTutorial from './ReanimatedTutorials/PinchGestureTutorial';
 import ScrollViewInterpolateTutorial from './ReanimatedTutorials/ScrollViewInterpolateTutorial';
+import HingeCardSwiping from './Pages/HingeCardSwiping';
+import ScrollViewFromScratch from './ReanimatedTutorials/ScrollViewFromScratch';
 
 const fonts = {
 	// 'SFProDisplay-Bold': require('./assets/fonts/SFPro/SF-Pro-Display-Bold.otf'),
@@ -32,7 +34,9 @@ export default function App() {
 			{/* <InterpolateColors /> */}
 			{/* <PinchGestureTutorial /> */}
 			{/* <DoubleTapGestureTutorial /> */}
-			<AnimatedScrollHeader />
+			{/* <AnimatedScrollHeader /> */}
+			{/* <HingeCardSwiping /> */}
+			<ScrollViewFromScratch />
 		</LoadAssets>
 	);
 }

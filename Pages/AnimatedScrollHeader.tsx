@@ -7,7 +7,7 @@ import Animated, {
 	useAnimatedStyle,
 	useSharedValue,
 } from 'react-native-reanimated';
-import Card from './components/Card';
+import Card from '../components/Card';
 
 const { width, height } = Dimensions.get('window');
 

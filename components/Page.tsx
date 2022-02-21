@@ -30,7 +30,7 @@ export default function Page({ title, idx, translateX }: PageProps) {
 			translateX.value,
 			inputRange,
 			[0, SIZE / 2, 0],
-			Extrapolate.CLAMP
+			Extrapolate.CLAMP			
 		);
 
 		return { transform: [{ scale }], borderRadius };
