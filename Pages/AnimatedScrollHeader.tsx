@@ -16,12 +16,9 @@ const COLLAPSED_HEADER_HEIGHT = 100;
 
 export default function AnimatedScrollHeader() {
 	const translateY = useSharedValue(0);
-	// const opacity = useSharedValue(1);
-
-	// const inputRange = [(idx - 1) * width, idx * width, (idx + 1) * width];
 
 	const scrollHandler = useAnimatedScrollHandler((event) => {
-		console.log(event.contentOffset.y);
+		// console.log(event.contentOffset.y);
 		translateY.value = event.contentOffset.y;
 	});
 
@@ -61,9 +58,7 @@ export default function AnimatedScrollHeader() {
 					Title
 				</Animated.Text>
 			</Animated.View>
-			{/* <View style={{ marginTop: COLLAPSED_HEADER_HEIGHT }}> */}
 			<Animated.ScrollView
-				// contentOffset={{ y: 50, x: 0 }}
 				onScroll={scrollHandler}
 				scrollEventThrottle={16}
 				contentContainerStyle={{
@@ -78,7 +73,6 @@ export default function AnimatedScrollHeader() {
 				<Card />
 				<Card />
 			</Animated.ScrollView>
-			{/* </View> */}
 		</SafeAreaView>
 	);
 }
