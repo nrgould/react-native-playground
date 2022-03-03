@@ -27,8 +27,6 @@ export default function ScrollViewFromScratch() {
 	const translateX = useSharedValue(0);
 
 	const clampedTranslateX = useDerivedValue(() => {
-		console.log(translateX.value);
-
 		return Math.max(Math.min(translateX.value, 0), MAX_TRANSLATE_X);
 	});
 

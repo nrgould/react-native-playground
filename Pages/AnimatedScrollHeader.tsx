@@ -9,16 +9,14 @@ import Animated, {
 } from 'react-native-reanimated';
 import Card from '../components/Card';
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
-const HEADER_HEIGHT = 200;
-const COLLAPSED_HEADER_HEIGHT = 100;
+const HEADER_HEIGHT = 100;
 
 export default function AnimatedScrollHeader() {
 	const translateY = useSharedValue(0);
 
 	const scrollHandler = useAnimatedScrollHandler((event) => {
-		// console.log(event.contentOffset.y);
 		translateY.value = event.contentOffset.y;
 	});
 
@@ -39,12 +37,6 @@ export default function AnimatedScrollHeader() {
 			translateY.value,
 			[50, 60],
 			[0, 1],
-			Extrapolate.CLAMP
-		);
-		const animHeight = interpolate(
-			translateY.value,
-			[0, 100],
-			[0, COLLAPSED_HEADER_HEIGHT],
 			Extrapolate.CLAMP
 		);
 		return {
@@ -79,14 +71,14 @@ export default function AnimatedScrollHeader() {
 
 const styles = StyleSheet.create({
 	title: {
-		marginTop: COLLAPSED_HEADER_HEIGHT,
+		marginTop: HEADER_HEIGHT,
 		fontSize: 40,
 		color: '#000',
 		width: '90%',
 	},
 	header: {
 		backgroundColor: 'white',
-		height: COLLAPSED_HEADER_HEIGHT,
+		height: HEADER_HEIGHT,
 		width: width,
 		position: 'absolute',
 		top: 0,

@@ -11,6 +11,9 @@ import ScrollViewFromScratch from './ReanimatedTutorials/ScrollViewFromScratch';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Bedtime from './BedTime/Bedtime';
 import CircularProgressBar from './ReanimatedTutorials/CircularProgressBar';
+import SwipeToDelete from './ReanimatedTutorials/SwipeToDelete';
+import { NavigationContainer } from '@react-navigation/native';
+import Duolingo from './Duolingo';
 
 const fonts = {
 	// 'SFProDisplay-Bold': require('./assets/fonts/SFPro/SF-Pro-Display-Bold.otf'),
@@ -30,13 +33,21 @@ const Drawer = createDrawerNavigator();
 
 export default function App() {
 	return (
-		<LoadAssets fonts={fonts}>
-			<Drawer.Navigator screenOptions={{ headerShown: false }}>
+		// <LoadAssets fonts={fonts}>
+		<NavigationContainer>
+			<Drawer.Navigator
+				initialRouteName='Duolingo'
+				screenOptions={{ headerShown: false }}>
 				<Drawer.Screen
 					name='Pan Gesture Tutorial'
 					component={PanGestureTutorial}
 				/>
 				<Drawer.Screen name='Apple Bedtime' component={Bedtime} />
+				<Drawer.Screen
+					name='Duolingo'
+					options={{ headerShown: true }}
+					component={Duolingo}
+				/>
 				<Drawer.Screen
 					name='ScrollView Interpolation'
 					component={ScrollViewInterpolateTutorial}
@@ -69,7 +80,12 @@ export default function App() {
 					name='Circular Progress Bar'
 					component={CircularProgressBar}
 				/>
+				<Drawer.Screen
+					name='Swipe To Delete'
+					component={SwipeToDelete}
+				/>
 			</Drawer.Navigator>
-		</LoadAssets>
+		</NavigationContainer>
+		// </LoadAssets>
 	);
 }
