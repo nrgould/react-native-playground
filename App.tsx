@@ -14,6 +14,7 @@ import CircularProgressBar from './ReanimatedTutorials/CircularProgressBar';
 import SwipeToDelete from './ReanimatedTutorials/SwipeToDelete';
 import { NavigationContainer } from '@react-navigation/native';
 import Duolingo from './Duolingo';
+import Chess from './Chess';
 
 const fonts = {
 	// 'SFProDisplay-Bold': require('./assets/fonts/SFPro/SF-Pro-Display-Bold.otf'),
@@ -36,7 +37,7 @@ export default function App() {
 		// <LoadAssets fonts={fonts}>
 		<NavigationContainer>
 			<Drawer.Navigator
-				initialRouteName='Duolingo'
+				initialRouteName='Chess'
 				screenOptions={{ headerShown: false }}>
 				<Drawer.Screen
 					name='Pan Gesture Tutorial'
@@ -47,6 +48,11 @@ export default function App() {
 					name='Duolingo'
 					options={{ headerShown: true }}
 					component={Duolingo}
+				/>
+				<Drawer.Screen
+					name='Chess'
+					options={{ headerShown: true }}
+					component={Chess}
 				/>
 				<Drawer.Screen
 					name='ScrollView Interpolation'

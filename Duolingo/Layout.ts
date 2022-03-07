@@ -21,7 +21,21 @@ const byOrder = (a: Offset, b: Offset) => {
 	return a.order.value > b.order.value ? 1 : -1;
 };
 
-const reorder = (input: Offset[], from: number, to: number) => {
+export const lastOrder = (input: Offset[]) => {
+	'worklet';
+	return input.filter(isNotInBank).length;
+};
+
+export const remove = (input: Offset[], index: number) => {
+	'worklet';
+	const offsets = input
+		.filter((o, i) => i !== index)
+		.filter(isNotInBank)
+		.sort(byOrder);
+	offsets.map((offset, i) => (offset.order.value = i));
+};
+
+export const reorder = (input: Offset[], from: number, to: number) => {
 	'worklet';
 	const offsets = input.filter(isNotInBank).sort(byOrder);
 	const newOffset = move(offsets, from, to);
@@ -43,8 +57,6 @@ export const calculateLayout = (input: Offset[], containerWidth: number) => {
 		const total = offsets
 			.slice(lineBreak, index)
 			.reduce((acc, o) => acc + o.width.value, 0);
-
-		console.log(total);
 
 		if (total + offset.width.value > containerWidth) {
 			lineNumber += 1;
